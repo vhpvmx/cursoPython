@@ -48,6 +48,18 @@ def definir_actividad(personaje):
             jugador = random.randint(1, 10)
             print("el jugador: ", jugador, "define la actividad")
 
+    if personaje == "Mago":
+        if opcion == 1:
+            print("Derrotar a un ejercito de duendes")
+        elif opcion == 2:
+            print("se convierte en burro")
+        elif opcion == 3:
+            print("baila el gallinazo")
+        elif opcion == 4:
+            print("tiene que ser el esclavo de alguien mas")
+        elif opcion == 5:
+            jugador = random.randint(0,10)
+            print("el juagador:",jugador,"define la actvidad")
 
 #definir_actividad("Caballero")
 
