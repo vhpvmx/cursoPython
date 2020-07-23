@@ -47,8 +47,7 @@ def definir_actividad(personaje):
         elif opcion == 5:
             jugador = random.randint(1, 10)
             print("el jugador: ", jugador, "define la actividad")
-
-    if personaje == "Mago":
+    elif personaje == "Mago":
         if opcion == 1:
             print("Derrotar a un ejercito de duendes")
         elif opcion == 2:
@@ -166,6 +165,12 @@ def inicializar():
     print("Los personajes han sido liberados")
     mycursor.execute("UPDATE asignacionPersonajes SET estatus = 0")
     mydb.commit()
+
+
+#Salvar que personaje te quedo asignado
+#en la bd deber guardarse el id de jugador asignado en la partida actual y el personaje asignado en esta partida
+#instalar mysql - BD
+#aprender como pasar los cambios del master al branch personal desde atom
 
 
 def ejecucionFunciones(op):
