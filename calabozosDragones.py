@@ -60,6 +60,20 @@ def definir_actividad(personaje):
         elif opcion == 5:
             jugador = random.randint(0,10)
             print("el juagador:",jugador,"define la actvidad")
+    if personaje == "Demogorgon":
+        if opcion == 1:
+            print("Vencer a eleven")
+        elif opcion == 2:
+            print("Elije el castigo que quieras")
+            print("Cantar, te coniertes en sapo, responder una pregunta")
+        elif opcion == 3:
+            print("Te conviertes en un sapo")
+        elif opcion == 4:
+            print("A cantar")
+        elif opcion == 5:
+            print("Tendras que responder una pregunta")      
+
+definir_actividad("Demogorgon")
 
 #definir_actividad("Caballero")
 
