@@ -11,6 +11,8 @@ Manejar el error si no mandas los parametros iniciales
 
 ---------------MEJORAS---------------
 Asignar imagen a los personajes
+Publicarlo online en una maquina virtual de amazon
+crear la bd en amazon
 
 
 TAREAS
