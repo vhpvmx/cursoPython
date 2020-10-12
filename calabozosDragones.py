@@ -71,7 +71,29 @@ def definir_actividad(personaje):
         elif opcion == 4:
             print("A cantar")
         elif opcion == 5:
-            print("Tendras que responder una pregunta")      
+            print("Tendras que responder una pregunta")
+    if personaje == "Troll":
+        if opcion == 1:
+          print ("No participas por 3 turnos")
+        elif opcion == 2:
+          print ("Piensa rapido 8*7")
+        elif opcion == 3:
+          print ("tendras que luchar con cazador de trolls")
+        elif opcion == 4:
+          print ("Podras aliarte con alguien,pero cuidate las espaldas porque te podria traicionar en cualquier momento")
+        elif opcion == 5:
+          print ("Podras domesticar un caballo")
+        elif opcion == 6:
+          print ("No podras hablar por 3 turnos")
+        elif opcion == 7
+          print ("Tira el dado si te sale un numero par seras esclavo de alguien y si es impar podrias tener un perro de tres cabezas que te protegera por 3 turnos")
+        elif opcion == 8
+          print ("Tu serviras los refrescos")
+        elif opcion == 9
+          print ("Cantar alguna cancion a votacion de los participantes")
+        elif opcion == 10
+           jugador = random.randint(1, 10)
+           |print("el jugador: ", jugador, "define la actividad")
 
 definir_actividad("Demogorgon")
 
