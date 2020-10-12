@@ -182,18 +182,4 @@ def inicializar():
 #Salvar que personaje te quedo asignado
 #en la bd deber guardarse el id de jugador asignado en la partida actual y el personaje asignado en esta partida
 #instalar mysql - BD
-#aprender como pasar los cambios del master al branch personal desde atom
-
-
-if personaje == "Samurai":
-        if opcion == 1:
-            print("Sacar katana")
-        elif opcion == 2:
-            print("")
-        elif opcion == 3:
-            print("baila el gallinazo")
-        elif opcion == 4:
-            print("tiene que ser el esclavo de alguien mas")
-        elif opcion == 5:
-            jugador = random.randint(0,10)
-            print("el juagador:",jugador,"define la actvidad")
+#aprender como pasar los cambios del master al branch pe
