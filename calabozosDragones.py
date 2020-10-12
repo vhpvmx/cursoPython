@@ -59,6 +59,18 @@ def definir_actividad(personaje):
         elif opcion == 5:
             jugador = random.randint(0,10)
             print("el juagador:",jugador,"define la actvidad")
+    elif personaje == "Samurai":
+        if opcion == 1:
+            print("Sacar katana")
+        elif opcion == 2:
+            print("Pelear")
+        elif opcion == 3:
+            print("Defender Honor")
+        elif opcion == 4:
+            print("Ayudar compañeros")
+        elif opcion == 5:
+            jugador = random.randint(0,10)
+            print("el juagador:",jugador,"define la actvidad")
 
 #definir_actividad("Caballero")
 
@@ -173,16 +185,15 @@ def inicializar():
 #aprender como pasar los cambios del master al branch personal desde atom
 
 
-def ejecucionFunciones(op):
-    print("op:", op)
-    if op == 1:
-        print("a")
-        inicializar()
-    elif op == 2:
-        definir_personaje()
-    elif op == 3:
-        definir_actividad("Caballero")
-    elif op == 4:
-        dados(op2)
-
-ejecucionFunciones(op1)
+if personaje == "Samurai":
+        if opcion == 1:
+            print("Sacar katana")
+        elif opcion == 2:
+            print("")
+        elif opcion == 3:
+            print("baila el gallinazo")
+        elif opcion == 4:
+            print("tiene que ser el esclavo de alguien mas")
+        elif opcion == 5:
+            jugador = random.randint(0,10)
+            print("el juagador:",jugador,"define la actvidad")
