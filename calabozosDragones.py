@@ -118,7 +118,19 @@ def definir_actividad(personaje):
             rand = random.randint(1,5)
           print("haz:", rand, "lagartijas")
         elif opcion == 5:
-            print("Vendenos un producto imaginario para convertirse en atleta, tienes 30 secs para prepararte y 2 minutos para vendernos el producto")
+          print("Vendenos un producto imaginario para convertirse en atleta, tienes 30 secs para prepararte y 2 minutos para vendernos el producto")
+    elif personaje == "Samurai":
+        if opcion == 1:
+            print("Sacar katana")
+        elif opcion == 2:
+            print("Pelear")
+        elif opcion == 3:
+            print("Defender Honor")
+        elif opcion == 4:
+            print("Ayudar compañeros")
+        elif opcion == 5:
+            jugador = random.randint(0,10)
+            print("el juagador:",jugador,"define la actvidad" 
     #PENDIENTE: Definir mas personajes
     #PENDIENTE: agregar las actividades para el ninja, del demogo
 
