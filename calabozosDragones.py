@@ -50,43 +50,77 @@ def definir_actividad(personaje):
             print("el jugador: ", jugador, "define la actividad")
     elif personaje == "Mago":
         if opcion == 1:
-            print("Derrotar a un ejercito de duendes")
+          print("Derrotar a un ejercito de duendes")
         elif opcion == 2:
-            print("se convierte en burro")
+          print("se convierte en burro")
         elif opcion == 3:
-            print("baila el gallinazo")
+          print("baila el gallinazo")
         elif opcion == 4:
-            print("tiene que ser el esclavo de alguien mas")
+          print("tiene que ser el esclavo de alguien mas")
         elif opcion == 5:
-            jugador = random.randint(1,10)
-            print("el jugador:",jugador,"define la actvidad")
+          jugador = random.randint(0,10)
+          print("el juagador:",jugador,"define la actvidad")
+    if personaje == "Demogorgon":
+        if opcion == 1:
+          print("Vencer a eleven")
+        elif opcion == 2:
+          print("Elije el castigo que quieras")
+          print("Cantar, te coniertes en sapo, responder una pregunta")
+        elif opcion == 3:
+          print("Te conviertes en un sapo")
+        elif opcion == 4:
+          print("A cantar")
+        elif opcion == 5:
+          print("Tendras que responder una pregunta")
+    if personaje == "Troll":
+        if opcion == 1:
+          print ("No participas por 3 turnos")
+        elif opcion == 2:
+          print ("Piensa rapido 8*7")
+        elif opcion == 3:
+          print ("tendras que luchar con cazador de trolls")
+        elif opcion == 4:
+          print ("Podras aliarte con alguien,pero cuidate las espaldas porque te podria traicionar en cualquier momento")
+        elif opcion == 5:
+          print ("Podras domesticar un caballo")
+        elif opcion == 6:
+          print ("No podras hablar por 3 turnos")
+        elif opcion == 7
+          print ("Tira el dado si te sale un numero par seras esclavo de alguien y si es impar podrias tener un perro de tres cabezas que te protegera por 3 turnos")
+        elif opcion == 8
+          print ("Tu serviras los refrescos")
+        elif opcion == 9
+          print ("Cantar alguna cancion a votacion de los participantes")
+        elif opcion == 10
+           jugador = random.randint(1, 10)
+          print("el jugador: ", jugador, "define la actividad")
     elif personaje == "Dragon":
         if opcion == 1:
-            print("Inventa un producto para el mal aliento e intenta venderlo, tienes 30 secs para prepararte y 2 mins para venderlo")
+          print("Inventa un producto para el mal aliento e intenta venderlo, tienes 30 secs para prepararte y 2 mins para venderlo")
         elif opcion == 2:
-            print("cuentanos como venciste al ultimo principe")
+          print("cuentanos como venciste al ultimo principe")
         elif opcion == 3:
-            print("describe una receta de cocina que lleve principes y caballeros")
+          print("describe una receta de cocina que lleve principes y caballeros")
         elif opcion == 4:
-            print("baila la peluza")
+          print("baila la peluza")
         elif opcion == 5:
             rand = random.randint(1,5)
-            print("salta:",rand,"veces")
+          print("salta:",rand,"veces")
     elif personaje == "Atleta":
         if opcion == 1:
             rand = random.randint(1,10)
-            print("Haz:", rand, "sentadillas")
+          print("Haz:", rand, "sentadillas")
         elif opcion == 2:
-            print("Narra como ganaste la final mundial de 100 metros libres")
+          print("Narra como ganaste la final mundial de 100 metros libres")
         elif opcion == 3:
-            print("baila la cancion de rocky")
+          print("baila la cancion de rocky")
         elif opcion == 4:
             rand = random.randint(1,5)
-            print("haz:", rand, "lagartijas")
+          print("haz:", rand, "lagartijas")
         elif opcion == 5:
             print("Vendenos un producto imaginario para convertirse en atleta, tienes 30 secs para prepararte y 2 minutos para vendernos el producto")
     #PENDIENTE: Definir mas personajes
-    #PENDIENTE: agregar las actividades para el ninja, del demogorgon
+    #PENDIENTE: agregar las actividades para el ninja, del demogo
 
 #ejemplo de una llamada a la funcion
 #definir_actividad("Caballero")
