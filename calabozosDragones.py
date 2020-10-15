@@ -88,8 +88,6 @@ def definir_actividad(personaje):
     #PENDIENTE: Definir mas personajes
     #PENDIENTE: agregar las actividades para el ninja, del demogorgon
 
-
-
 #ejemplo de una llamada a la funcion
 #definir_actividad("Caballero")
 
@@ -202,6 +200,12 @@ def inicializar():
 #aprender como pasar los cambios del master al branch personal desde atom
 #crear una funcion que se ejecute cada 15 mins con un reto para todo el equipo
 #Ejecutar el programa de forma local
+
+#Salvar que personaje te quedo asignado
+#en la bd deber guardarse el id de jugador asignado en la partida actual y el personaje asignado en esta partida
+#instalar mysql - BD
+#aprender como pasar los cambios del master al branch personal desde atom
+
 
 def ejecucionFunciones(op):
     print("op:", op)
