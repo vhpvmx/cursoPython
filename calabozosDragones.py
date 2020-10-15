@@ -14,7 +14,7 @@ print("op1 2 -- definir_personaje()")
 print('op1 3 -- definir_actividad("Caballero")')
 print("op1 4 -- dados(op2)")
 
-
+#Conexion a la BD
 db = "calabozos"
 try:
     mydb = mysql.connector.connect(
@@ -30,7 +30,7 @@ except Exception as e:
     print('[' + type(e).__name__ + ']', str(e))
     print('error conectandose a la BD')
 
-
+#Esta funcion asigna la actividad que va a realizar el jugador
 def definir_actividad(personaje):
     opcion = random.randint(1, 5)
     print ("opcion:", opcion)
@@ -45,20 +45,80 @@ def definir_actividad(personaje):
         elif opcion == 4:
             print("Te toca ir por las pizzas")
         elif opcion == 5:
+            #PENDIENTE: regresarte un numero aleatorio donde el rango superior sea el numero de jugadores
             jugador = random.randint(1, 10)
             print("el jugador: ", jugador, "define la actividad")
     elif personaje == "Mago":
         if opcion == 1:
-            print("Derrotar a un ejercito de duendes")
+          print("Derrotar a un ejercito de duendes")
         elif opcion == 2:
-            print("se convierte en burro")
+          print("se convierte en burro")
         elif opcion == 3:
-            print("baila el gallinazo")
+          print("baila el gallinazo")
         elif opcion == 4:
-            print("tiene que ser el esclavo de alguien mas")
+          print("tiene que ser el esclavo de alguien mas")
         elif opcion == 5:
-            jugador = random.randint(0,10)
-            print("el juagador:",jugador,"define la actvidad")
+          jugador = random.randint(0,10)
+          print("el juagador:",jugador,"define la actvidad")
+    if personaje == "Demogorgon":
+        if opcion == 1:
+          print("Vencer a eleven")
+        elif opcion == 2:
+          print("Elije el castigo que quieras")
+          print("Cantar, te coniertes en sapo, responder una pregunta")
+        elif opcion == 3:
+          print("Te conviertes en un sapo")
+        elif opcion == 4:
+          print("A cantar")
+        elif opcion == 5:
+          print("Tendras que responder una pregunta")
+    if personaje == "Troll":
+        if opcion == 1:
+          print ("No participas por 3 turnos")
+        elif opcion == 2:
+          print ("Piensa rapido 8*7")
+        elif opcion == 3:
+          print ("tendras que luchar con cazador de trolls")
+        elif opcion == 4:
+          print ("Podras aliarte con alguien,pero cuidate las espaldas porque te podria traicionar en cualquier momento")
+        elif opcion == 5:
+          print ("Podras domesticar un caballo")
+        elif opcion == 6:
+          print ("No podras hablar por 3 turnos")
+        elif opcion == 7
+          print ("Tira el dado si te sale un numero par seras esclavo de alguien y si es impar podrias tener un perro de tres cabezas que te protegera por 3 turnos")
+        elif opcion == 8
+          print ("Tu serviras los refrescos")
+        elif opcion == 9
+          print ("Cantar alguna cancion a votacion de los participantes")
+        elif opcion == 10
+           jugador = random.randint(1, 10)
+          print("el jugador: ", jugador, "define la actividad")
+    elif personaje == "Dragon":
+        if opcion == 1:
+          print("Inventa un producto para el mal aliento e intenta venderlo, tienes 30 secs para prepararte y 2 mins para venderlo")
+        elif opcion == 2:
+          print("cuentanos como venciste al ultimo principe")
+        elif opcion == 3:
+          print("describe una receta de cocina que lleve principes y caballeros")
+        elif opcion == 4:
+          print("baila la peluza")
+        elif opcion == 5:
+            rand = random.randint(1,5)
+          print("salta:",rand,"veces")
+    elif personaje == "Atleta":
+        if opcion == 1:
+            rand = random.randint(1,10)
+          print("Haz:", rand, "sentadillas")
+        elif opcion == 2:
+          print("Narra como ganaste la final mundial de 100 metros libres")
+        elif opcion == 3:
+          print("baila la cancion de rocky")
+        elif opcion == 4:
+            rand = random.randint(1,5)
+          print("haz:", rand, "lagartijas")
+        elif opcion == 5:
+          print("Vendenos un producto imaginario para convertirse en atleta, tienes 30 secs para prepararte y 2 minutos para vendernos el producto")
     elif personaje == "Samurai":
         if opcion == 1:
             print("Sacar katana")
@@ -70,16 +130,18 @@ def definir_actividad(personaje):
             print("Ayudar compañeros")
         elif opcion == 5:
             jugador = random.randint(0,10)
-            print("el juagador:",jugador,"define la actvidad")
+            print("el juagador:",jugador,"define la actvidad" 
+    #PENDIENTE: Definir mas personajes
+    #PENDIENTE: agregar las actividades para el ninja, del demogo
 
+#ejemplo de una llamada a la funcion
 #definir_actividad("Caballero")
 
-#Recibe el rango superior
+#La funcion dados recibe el rango superior
 #Imprime dos numeros aleatorios que no sobrepasen el rango superior
-#el numero sup debe ser un 6 o 12, 18 o 24 si es distinto debe imprimir un msj que diga que numeros deben ser
+#el rango sup debe ser un 6 o 12, 18 o 24 si es distinto debe imprimir un msj que diga que numeros deben ser
 def dados(rango):
     print("")
-    #6, 12, 18, 24
     #pensar en otra forma de validarlo
     #if rango == 6 or rango == 12 or rango == 18 or rango == 24:
     if not (rango % 6) and rango <=24 :
@@ -90,12 +152,12 @@ def dados(rango):
     else:
         print("Debes elegir como rango superior uno de estos numeros: 6, 12, 18 o 24, el numero elegido fue:", rango)
 
-
+#Ejemplo de la llamada a la funcion dados
 #dados(24)
 #dados(30)
 
+#Esta funcion asiganara un personaje de forma aleatoria a la persona que ejecute el programa
 def definir_personaje():
-    #esta funcion asiganara un personaje de forma aleatoria a la persona que ejecute el programa
     #que pasa si el personaje ya se asigno
     opcion = random.randint(1, 4)
     print("opcion:", opcion)
@@ -169,17 +231,39 @@ def definir_personaje():
             else:
                 print("Ya todos los personajes estan asignados")
 
-
+#Ejemplo de la llamada a la funcion
 #definir_personaje()
 
+#Libera a los personajes en la BD
 def inicializar():
-    #Libera a los personajes en la BD
     print("Los personajes han sido liberados")
     mycursor.execute("UPDATE asignacionPersonajes SET estatus = 0")
     mydb.commit()
 
+#Salvar que personaje te quedo asignado
+#en la bd deber guardarse el id de jugador asignado en la partida actual y el personaje asignado en esta partida
+#instalar mysql - BD
+#aprender como pasar los cambios del master al branch personal desde atom
+#crear una funcion que se ejecute cada 15 mins con un reto para todo el equipo
+#Ejecutar el programa de forma local
 
 #Salvar que personaje te quedo asignado
 #en la bd deber guardarse el id de jugador asignado en la partida actual y el personaje asignado en esta partida
 #instalar mysql - BD
-#aprender como pasar los cambios del master al branch pe
+#aprender como pasar los cambios del master al branch personal desde atom
+
+
+def ejecucionFunciones(op):
+    print("op:", op)
+    if op == 1:
+        print("a")
+        inicializar()
+    elif op == 2:
+        definir_personaje()
+    elif op == 3:
+        #PENDIENTE: Mandar como parametro el personaje que ejecuta la funcion
+        definir_actividad("Caballero")
+    elif op == 4:
+        dados(op2)
+
+ejecucionFunciones(op1)
