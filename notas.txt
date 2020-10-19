@@ -1,0 +1,37 @@
+Cosas por hacer
+
+***verificar el acceso a github de Daniel
+***Integrar el codigo del ninja con github (dani)
+verificar el acceso a github de Kalel
+Manejar el error si no mandas los parametros iniciales
+
+#PENDIENTE: Definir mas personajes
+#PENDIENTE: agregar las actividades para el ninja, del demogorgon
+#PENDIENTE: regresarte un numero aleatorio donde el rango superior sea el numero de jugadores
+#PENDIENTE: Mandar como parametro el personaje que ejecuta la funcion
+
+---------------MEJORAS---------------
+Asignar imagen a los personajes
+Publicarlo online en una maquina virtual de amazon
+crear la bd en amazon
+
+
+TAREAS
+
+Dani
+definir dos personajes mas
+definir 5 actividades para esos personajes
+
+Kalel
+definir dos personajes mas
+definir 5 actividades para esos personajes
+
+Hugo 
+definir dos personajes mas
+definir 5 actividades para esos personajes
+
+opcional en lugar de 5 actividades definir 10 actividades para cada personaje
+
+Buscar videos de historias de exito de pequeños negocios
+Ejemplos desarrollo de videojuegos
+Creacion de diseños de camisetas
