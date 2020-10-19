@@ -85,6 +85,21 @@ def definir_actividad(personaje):
             print("haz:", rand, "lagartijas")
         elif opcion == 5:
             print("Vendenos un producto imaginario para convertirse en atleta, tienes 30 secs para prepararte y 2 minutos para vendernos el producto")
+    elif personaje == "enano de lucha libre":
+        if opcion == 1:
+            print("haz una vuelta de panda")
+    elif personaje == "Cantante":
+        if opcion == 1:
+            print("Agredece que has ganado el grammy latino")
+        elif opcion == 2:
+            print("Pon a todo el equipo un ejercicio de vocalizacion")
+        elif opcion == 3:
+            print("Beatbox time!!")
+        elif opcion == 4:
+            rand = random.randint(1,5)
+            print("Cantanos una cumbia!")
+        elif opcion == 5:
+            print("Canta tu cancion favorita")
     #PENDIENTE: Definir mas personajes
     #PENDIENTE: agregar las actividades para el ninja, del demogorgon
 
