@@ -3,7 +3,7 @@ Cosas por hacer
 ***verificar el acceso a github de Daniel
 ***Integrar el codigo del ninja con github (dani)
 ***verificar el acceso a github de Kalel
-Bajar el codigo de github y verificar que se ejecuta correctamente en la pc
+***Bajar el codigo de github y verificar que se ejecuta correctamente en la pc
 Manejar el error si no mandas los parametros iniciales
 
 ***#PENDIENTE: Definir mas personajes
