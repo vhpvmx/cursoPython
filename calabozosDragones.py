@@ -85,13 +85,13 @@ def definir_actividad(personaje):
             print ("Podras domesticar un caballo")
         elif opcion == 6:
             print ("No podras hablar por 3 turnos")
-        elif opcion == 7
+        elif opcion == 7:
             print ("Tira el dado si te sale un numero par seras esclavo de alguien y si es impar podrias tener un perro de tres cabezas que te protegera por 3 turnos")
-        elif opcion == 8
+        elif opcion == 8:
             print ("Tu serviras los refrescos")
-        elif opcion == 9
+        elif opcion == 9:
             print ("Cantar alguna cancion a votacion de los participantes")
-        elif opcion == 10
+        elif opcion == 10:
             jugador = random.randint(1, 10)
             print("el jugador: ", jugador, "define la actividad")
     elif personaje == "Dragon":
@@ -127,10 +127,10 @@ def definir_actividad(personaje):
         elif opcion == 3:
             print("Defender Honor")
         elif opcion == 4:
-            print("Ayudar compañeros")
+            print("ayudar companieros")
         elif opcion == 5:
             jugador = random.randint(0,10)
-            print("el juagador:",jugador,"define la actvidad"
+            print("el juagador:",jugador,"define la actvidad")
     elif personaje == "enano de lucha libre":
         if opcion == 1:
             print("haz una vuelta de panda")
