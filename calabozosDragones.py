@@ -3,16 +3,35 @@ import mysql.connector
 import dogs
 import sys
 
-#Define que funcion vamos a ejecutar
-op1 = int(sys.argv[1])
-#Define el rango de los dados
-op2 = int(sys.argv[2])
+try:
+    #Define que funcion vamos a ejecutar
+    op1 = int(sys.argv[1])
+except Exception as e:
+    op1 = 1000
 
-print("las opciones recibidas como parametros son op1:", op1, "op2:", op2)
+try:
+    #Define el rango de los dados
+    op2 = int(sys.argv[2])
+except Exception as e:
+    op2 = 6
+
+try:
+    #Define el rango de los dados
+    op3 = sys.argv[3]
+except Exception as e:
+    op3 = ""
+
+
+print("op3:", op3)
+print("Las opciones disponibles en el sistema son:")
 print("op1 1 -- inicializar()")
 print("op1 2 -- definir_personaje()")
-print('op1 3 -- definir_actividad("Caballero")')
+print("op1 3 -- definir_actividad()")
 print("op1 4 -- dados(op2)")
+
+if op1 == 1000:
+    print("")
+    print('No has enviado los parametros iniciales, debes ejecutar el programa con dos parametros, el primero indica la funcion a realizar y el segundo el rango de los dados')
 
 #Conexion a la BD
 db = "calabozos"
@@ -31,9 +50,18 @@ except Exception as e:
     print('error conectandose a la BD')
 
 #Esta funcion asigna la actividad que va a realizar el jugador
-def definir_actividad(personaje):
+def definir_actividad(jugador):
+    mycursor.execute("SELECT id, descripcion FROM asignacionPersonajes where jugador = %s", (jugador,))
+    myresult = mycursor.fetchone()
+    id = int(myresult[0])
+    personaje = myresult[1]
+
+    mycursor.execute("SELECT count(*) FROM asignacionPersonajes where estatus = 1")
+    myresult = mycursor.fetchone()
+    num_jugadores = int(myresult[0])
+
     opcion = random.randint(1, 5)
-    print ("opcion:", opcion)
+    print ("jugador:", jugador, "- personaje:", personaje, "- opcion:", opcion)
 
     if personaje == "Caballero":
         if opcion == 1:
@@ -45,9 +73,24 @@ def definir_actividad(personaje):
         elif opcion == 4:
             print("Te toca ir por las pizzas")
         elif opcion == 5:
-            #PENDIENTE: regresarte un numero aleatorio donde el rango superior sea el numero de jugadores
-            jugador = random.randint(1, 10)
-            print("el jugador: ", jugador, "define la actividad")
+            try:
+                id_jugador_l = random.randint(1, num_jugadores)
+                if id_jugador_l == id:
+                    if id_jugador_l > 1:
+                        id_jugador_l = id_jugador_l - 1
+                    else:
+                        id_jugador_l = id_jugador_l + 1
+
+                mycursor.execute("SELECT descripcion FROM asignacionPersonajes where id = %s", (id_jugador_l,))
+                myresult = mycursor.fetchone()
+                personaje_l = myresult[0]
+                print(personaje_l, "define la actividad")
+            except Exception as e:
+                print('[1] msg original de error: ', )
+                print('[' + type(e).__name__ + ']', str(e))
+                print("jugador_l:", jugador_l)
+                print('error ejecutando la actividad 5 para el caballero')
+
     elif personaje == "Mago":
         if opcion == 1:
             print("Derrotar a un ejercito de duendes")
@@ -131,6 +174,18 @@ def definir_actividad(personaje):
         elif opcion == 5:
             jugador = random.randint(0,10)
             print("el juagador:",jugador,"define la actvidad")
+    elif personaje == "Ninja":
+        if opcion == 1:
+            print("Sacar katana")
+        elif opcion == 2:
+            print("Pelear")
+        elif opcion == 3:
+            print("Defender Honor")
+        elif opcion == 4:
+            print("ayudar companieros")
+        elif opcion == 5:
+            jugador = random.randint(0,10)
+            print("el juagador:",jugador,"define la actvidad")
     elif personaje == "enano de lucha libre":
         if opcion == 1:
             print("haz una vuelta de panda")
@@ -149,8 +204,6 @@ def definir_actividad(personaje):
         elif opcion == 5:
             print("Canta tu cancion favorita")
 
-    #PENDIENTE: Definir mas personajes
-    #PENDIENTE: agregar las actividades para el ninja, del demogo
 
 #ejemplo de una llamada a la funcion
 #definir_actividad("Caballero")
@@ -161,8 +214,8 @@ def definir_actividad(personaje):
 def dados(rango):
     print("")
     #pensar en otra forma de validarlo
-    #if rango == 6 or rango == 12 or rango == 18 or rango == 24:
-    if not (rango % 6) and rango <=24 :
+    if (rango == 6 or rango == 12 or rango == 18 or rango == 24) and rango != 0:
+    #if not ((rango % 6) and rango <=24) and rango != 0 :
         print("El rango es correcto, el numero elegido fue:", rango)
         num1 = random.randint(1, rango)
         num2 = random.randint(1, rango)
@@ -175,9 +228,10 @@ def dados(rango):
 #dados(30)
 
 #Esta funcion asiganara un personaje de forma aleatoria a la persona que ejecute el programa
-def definir_personaje():
+def definir_personaje(jugador):
     #que pasa si el personaje ya se asigno
-    opcion = random.randint(1, 4)
+    num_max_personajes = 4
+    opcion = random.randint(1, num_max_personajes)
     print("opcion:", opcion)
     try:
         mycursor.execute("SELECT estatus, descripcion FROM asignacionPersonajes where id = %s", (opcion,))
@@ -189,65 +243,20 @@ def definir_personaje():
         print('[' + type(e).__name__ + ']', str(e))
         print('error consultando la tabla de asignacion de personajes')
 
-    if opcion == 1:
-        if estatus == 0:
-            print("Tu personaje es:", descripcion)
-            mycursor.execute("UPDATE asignacionPersonajes SET estatus = 1 where id = %s", (opcion,))
-            mydb.commit()
+    if estatus == 0:
+        print(jugador, "tu personaje es:", descripcion)
+        mycursor.execute("UPDATE asignacionPersonajes SET estatus = 1, jugador = %s where id = %s", (jugador, opcion,))
+        mydb.commit()
+    else:
+        print("El personaje:", descripcion, "ya esta asignado")
+        mycursor.execute("SELECT count(*) FROM asignacionPersonajes where estatus = 0" )
+        myresult = mycursor.fetchone()
+        count_libre = int(myresult[0])
+        if count_libre > 0:
+            definir_personaje(jugador)
         else:
-            print("El personaje:", descripcion, "ya esta asignado")
-            mycursor.execute("SELECT count(*) FROM asignacionPersonajes where estatus = 0" )
-            myresult = mycursor.fetchone()
-            count_libre = int(myresult[0])
-            if count_libre > 0:
-                definir_personaje()
-            else:
-                print("Ya todos los personajes estan asignados")
+            print("Ya todos los personajes estan asignados")
 
-    elif opcion == 2:
-        if estatus == 0:
-            print("Tu personaje es:", descripcion)
-            mycursor.execute("UPDATE asignacionPersonajes SET estatus = 1 where id = %s", (opcion,))
-            mydb.commit()
-        else:
-            print("El personaje:", descripcion, "ya esta asignado")
-            mycursor.execute("SELECT count(*) FROM asignacionPersonajes where estatus = 0" )
-            myresult = mycursor.fetchone()
-            count_libre = int(myresult[0])
-            if count_libre > 0:
-                definir_personaje()
-            else:
-                print("Ya todos los personajes estan asignados")
-
-    elif opcion == 3:
-        if estatus == 0:
-            print("Tu personaje es:", descripcion)
-            mycursor.execute("UPDATE asignacionPersonajes SET estatus = 1 where id = %s", (opcion,))
-            mydb.commit()
-        else:
-            print("El personaje:", descripcion, "ya esta asignado")
-            mycursor.execute("SELECT count(*) FROM asignacionPersonajes where estatus = 0" )
-            myresult = mycursor.fetchone()
-            count_libre = int(myresult[0])
-            if count_libre > 0:
-                definir_personaje()
-            else:
-                print("Ya todos los personajes estan asignados")
-
-    elif opcion == 4:
-        if estatus == 0:
-            print("Tu personaje es:", descripcion)
-            mycursor.execute("UPDATE asignacionPersonajes SET estatus = 1 where id = %s", (opcion,))
-            mydb.commit()
-        else:
-            print("El personaje:", descripcion, "ya esta asignado")
-            mycursor.execute("SELECT count(*) FROM asignacionPersonajes where estatus = 0" )
-            myresult = mycursor.fetchone()
-            count_libre = int(myresult[0])
-            if count_libre > 0:
-                definir_personaje()
-            else:
-                print("Ya todos los personajes estan asignados")
 
 #Ejemplo de la llamada a la funcion
 #definir_personaje()
@@ -255,7 +264,7 @@ def definir_personaje():
 #Libera a los personajes en la BD
 def inicializar():
     print("Los personajes han sido liberados")
-    mycursor.execute("UPDATE asignacionPersonajes SET estatus = 0")
+    mycursor.execute("UPDATE asignacionPersonajes SET estatus = 0, jugador = ''")
     mydb.commit()
 
 #Salvar que personaje te quedo asignado
@@ -272,16 +281,18 @@ def inicializar():
 
 
 def ejecucionFunciones(op):
-    print("op:", op)
+    #print("op:", op)
     if op == 1:
         print("a")
         inicializar()
     elif op == 2:
-        definir_personaje()
+        definir_personaje(op3)
     elif op == 3:
-        #PENDIENTE: Mandar como parametro el personaje que ejecuta la funcion
-        definir_actividad("Caballero")
+        definir_actividad(op3)
     elif op == 4:
         dados(op2)
+    elif op == 1000:
+        print('Ejecuta de nuevo el programa, recuerda enviar los parametros!!!')
 
+#Ejecucion
 ejecucionFunciones(op1)
