@@ -11,6 +11,12 @@ Cosas por hacer
 ***#PENDIENTE: regresarte un numero aleatorio donde el rango superior sea el numero de jugadores
 ***#PENDIENTE: Mandar como parametro el personaje que ejecuta la funcion
 ***Manejar el error si no mandas los parametros iniciales
+#actualizar la bd con todos los personajes
+#PENDIENTE CONSULTAR A LA BD CUANTOS PERSONAJES EXISTEN
+#instalar mysql - BD
+#Ejecutar el programa de forma local
+#crear una funcion que se ejecute cada 15 mins con un reto para todo el equipo
+
 ---------------MEJORAS---------------
 Asignar imagen a los personajes
 Publicarlo online en una maquina virtual de amazon
@@ -26,6 +32,8 @@ Dani: armar una compu de escritorio
   ya tendras un presupuesto, ¿habra conseguir dinero para la compra?
 
 TAREAS
+Poner comentarios al programa y guardarlo en github en tu branch
+modificar la parte del programa donde se llama a la funcion random
 
 Buscar videos de historias de exito de pequeños negocios
   Ejemplos desarrollo de videojuegos
