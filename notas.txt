@@ -33,7 +33,7 @@ Dani: armar una compu de escritorio
 
 TAREAS
 Copiar la ultima version de calabozosDragones.py haciendo un request a mi branch
-Poner comentarios al programa y guardarlo en github en tu branch
+Teclear el programa y poner comentarios al programa y guardarlo en github en tu branch
 modificar la parte del programa donde se llama a la funcion random
 
 Buscar videos de historias de exito de pequeños negocios
