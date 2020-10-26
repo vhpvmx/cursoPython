@@ -4,19 +4,16 @@ import dogs
 import sys
 
 try:
-    #Define que funcion vamos a ejecutar
     op1 = int(sys.argv[1])
 except Exception as e:
     op1 = 1000
 
 try:
-    #Define el rango de los dados
     op2 = int(sys.argv[2])
 except Exception as e:
     op2 = 6
 
 try:
-    #Define el rango de los dados
     op3 = sys.argv[3]
 except Exception as e:
     op3 = ""
@@ -33,7 +30,6 @@ if op1 == 1000:
     print("")
     print('No has enviado los parametros iniciales, debes ejecutar el programa con dos parametros, el primero indica la funcion a realizar y el segundo el rango de los dados')
 
-#Conexion a la BD
 db = "calabozos"
 try:
     mydb = mysql.connector.connect(
@@ -49,7 +45,6 @@ except Exception as e:
     print('[' + type(e).__name__ + ']', str(e))
     print('error conectandose a la BD')
 
-#Esta funcion asigna la actividad que va a realizar el jugador
 def definir_actividad(jugador):
     mycursor.execute("SELECT id, descripcion FROM asignacionPersonajes where jugador = %s", (jugador,))
     myresult = mycursor.fetchone()
@@ -89,6 +84,7 @@ def definir_actividad(jugador):
                 print('[1] msg original de error: ', )
                 print('[' + type(e).__name__ + ']', str(e))
                 print("jugador_l:", jugador_l)
+                #Hacer este mensaje dinamico usando las variables opcion y personaje
                 print('error ejecutando la actividad 5 para el caballero')
 
     elif personaje == "Mago":
@@ -205,15 +201,8 @@ def definir_actividad(jugador):
             print("Canta tu cancion favorita")
 
 
-#ejemplo de una llamada a la funcion
-#definir_actividad("Caballero")
-
-#La funcion dados recibe el rango superior
-#Imprime dos numeros aleatorios que no sobrepasen el rango superior
-#el rango sup debe ser un 6 o 12, 18 o 24 si es distinto debe imprimir un msj que diga que numeros deben ser
 def dados(rango):
     print("")
-    #pensar en otra forma de validarlo
     if (rango == 6 or rango == 12 or rango == 18 or rango == 24) and rango != 0:
     #if not ((rango % 6) and rango <=24) and rango != 0 :
         print("El rango es correcto, el numero elegido fue:", rango)
@@ -223,13 +212,9 @@ def dados(rango):
     else:
         print("Debes elegir como rango superior uno de estos numeros: 6, 12, 18 o 24, el numero elegido fue:", rango)
 
-#Ejemplo de la llamada a la funcion dados
-#dados(24)
-#dados(30)
 
-#Esta funcion asiganara un personaje de forma aleatoria a la persona que ejecute el programa
 def definir_personaje(jugador):
-    #que pasa si el personaje ya se asigno
+    #PENDIENTE CONSULTAR A LA BD CUANTOS PERSONAJES EXISTEN
     num_max_personajes = 4
     opcion = random.randint(1, num_max_personajes)
     print("opcion:", opcion)
@@ -258,30 +243,12 @@ def definir_personaje(jugador):
             print("Ya todos los personajes estan asignados")
 
 
-#Ejemplo de la llamada a la funcion
-#definir_personaje()
-
-#Libera a los personajes en la BD
 def inicializar():
     print("Los personajes han sido liberados")
     mycursor.execute("UPDATE asignacionPersonajes SET estatus = 0, jugador = ''")
     mydb.commit()
 
-#Salvar que personaje te quedo asignado
-#en la bd deber guardarse el id de jugador asignado en la partida actual y el personaje asignado en esta partida
-#instalar mysql - BD
-#aprender como pasar los cambios del master al branch personal desde atom
-#crear una funcion que se ejecute cada 15 mins con un reto para todo el equipo
-#Ejecutar el programa de forma local
-
-#Salvar que personaje te quedo asignado
-#en la bd deber guardarse el id de jugador asignado en la partida actual y el personaje asignado en esta partida
-#instalar mysql - BD
-#aprender como pasar los cambios del master al branch personal desde atom
-
-
 def ejecucionFunciones(op):
-    #print("op:", op)
     if op == 1:
         print("a")
         inicializar()
