@@ -32,6 +32,7 @@ Dani: armar una compu de escritorio
   ya tendras un presupuesto, ¿habra conseguir dinero para la compra?
 
 TAREAS
+Copiar la ultima version de calabozosDragones.py haciendo un request a mi branch
 Poner comentarios al programa y guardarlo en github en tu branch
 modificar la parte del programa donde se llama a la funcion random
 
