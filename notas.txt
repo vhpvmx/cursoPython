@@ -16,23 +16,17 @@ Asignar imagen a los personajes
 Publicarlo online en una maquina virtual de amazon
 crear la bd en amazon
 
+Kalel: chat para reemplazar whatss
+  instalar slack, slack.com
+  a partir de hoy 26 de octubre 2020 reemplazamos whatss con slack, ahi mandare los enlaces a zoom
+Dani: armar una compu de escritorio
+  investigar opciones similares a pccomponentes.com, buscar una opcion similar en México
+  Hacer una lista de los principales componentes 
+  elegir los componentes, para eso habra que comparar
+  ya tendras un presupuesto, ¿habra conseguir dinero para la compra?
 
 TAREAS
 
-Dani
-definir dos personajes mas
-definir 5 actividades para esos personajes
-
-Kalel
-definir dos personajes mas
-definir 5 actividades para esos personajes
-
-Hugo 
-definir dos personajes mas
-definir 5 actividades para esos personajes
-
-opcional en lugar de 5 actividades definir 10 actividades para cada personaje
-
 Buscar videos de historias de exito de pequeños negocios
-Ejemplos desarrollo de videojuegos
-Creacion de diseños de camisetas
+  Ejemplos desarrollo de videojuegos
+  Creacion de diseños de camisetas
