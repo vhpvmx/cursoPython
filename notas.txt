@@ -1,21 +1,21 @@
-Cosas por hacer
+Cosas por hacer en las sesiones
 
 ***verificar el acceso a github de Daniel
 ***Integrar el codigo del ninja con github (dani)
 ***verificar el acceso a github de Kalel
 ***Bajar el codigo de github y verificar que se ejecuta correctamente en la pc
-
-
 ***#PENDIENTE: Definir mas personajes
 ***#PENDIENTE: agregar las actividades para el ninja, del demogorgon
 ***#PENDIENTE: regresarte un numero aleatorio donde el rango superior sea el numero de jugadores
 ***#PENDIENTE: Mandar como parametro el personaje que ejecuta la funcion
 ***Manejar el error si no mandas los parametros iniciales
+
 #actualizar la bd con todos los personajes
 #PENDIENTE CONSULTAR A LA BD CUANTOS PERSONAJES EXISTEN
 #instalar mysql - BD
 #Ejecutar el programa de forma local
 #crear una funcion que se ejecute cada 15 mins con un reto para todo el equipo
+Apagar temporalmente la maquina virtual en amazon
 
 ---------------MEJORAS---------------
 Asignar imagen a los personajes
@@ -30,10 +30,15 @@ Dani: armar una compu de escritorio
   Hacer una lista de los principales componentes 
   elegir los componentes, para eso habra que comparar
   ya tendras un presupuesto, ¿habra conseguir dinero para la compra?
+  ¿Como financiar el proyecto?
+    - buscar opciones de teletrabajo
+    - generar ganancias usando apps: brave, library, etc
+    - desarrollar proyectos de sw y venderlos
+    
 
-TAREAS
+TAREAS para casa
 Copiar la ultima version de calabozosDragones.py haciendo un request a mi branch
-Teclear el programa y poner comentarios al programa y guardarlo en github en tu branch
+Teclear el programa, poner comentarios al programa y guardarlo en github en tu branch
 modificar la parte del programa donde se llama a la funcion random
 
 Buscar videos de historias de exito de pequeños negocios
