@@ -10,12 +10,12 @@ Cosas por hacer en las sesiones
 ***#PENDIENTE: Mandar como parametro el personaje que ejecuta la funcion
 ***Manejar el error si no mandas los parametros iniciales
 
-#actualizar la bd con todos los personajes
-#PENDIENTE CONSULTAR A LA BD CUANTOS PERSONAJES EXISTEN
-#instalar mysql - BD
-#Ejecutar el programa de forma local
+***#actualizar la bd con todos los personajes
+***#PENDIENTE CONSULTAR A LA BD CUANTOS PERSONAJES EXISTEN
+
 #crear una funcion que se ejecute cada 15 mins con un reto para todo el equipo
-Apagar temporalmente la maquina virtual en amazon
+#instalar mysql - BD
+#Ejecutar el programa en la nube - amazon => blockchain
 
 ---------------MEJORAS---------------
 Asignar imagen a los personajes
@@ -37,7 +37,7 @@ Dani: armar una compu de escritorio
     
 
 TAREAS para casa
-Copiar la ultima version de calabozosDragones.py haciendo un request a mi branch
+***Copiar la ultima version de calabozosDragones.py haciendo un request a mi branch
 Teclear el programa, poner comentarios al programa y guardarlo en github en tu branch
 modificar la parte del programa donde se llama a la funcion random
 
