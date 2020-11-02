@@ -13,14 +13,18 @@ Cosas por hacer en las sesiones
 ***#actualizar la bd con todos los personajes
 ***#PENDIENTE CONSULTAR A LA BD CUANTOS PERSONAJES EXISTEN
 
+#Terminamos la revision de los programas tecleados por kalel y dani
+#Asegurarse de que cada personaje tenga 10 actividades
+#PENDIENTE hacer una funcion recursiva con esta parte del codigo
+#Hacer este mensaje dinamico usando las variables opcion y personaje
 #crear una funcion que se ejecute cada 15 mins con un reto para todo el equipo
 #instalar mysql - BD
 #Ejecutar el programa en la nube - amazon => blockchain
+#interfaz web para la desktop y una app para el movil
 
 ---------------MEJORAS---------------
 Asignar imagen a los personajes
-Publicarlo online en una maquina virtual de amazon
-crear la bd en amazon
+
 
 Kalel: chat para reemplazar whatss
   instalar slack, slack.com
