@@ -13,7 +13,7 @@ except Exception as e:
 print("num2")
 
 try:
-    op3 = "+,-,*,/"
+    op3 = int(sys.argv[3])
 except Exception as e:
     op3 = ""
 print("op3")
