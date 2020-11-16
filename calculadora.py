@@ -5,7 +5,7 @@ try:
 except Exception as e:
     num1 = 0
 
-print("num1")
+print(num1)
 try:
     num2 = int(sys.argv[2])
 except Exception as e:
@@ -13,10 +13,10 @@ except Exception as e:
 print("num2")
 
 try:
-    op3 = int(sys.argv[3])
+    op3 = (sys.argv[3])
 except Exception as e:
     op3 = ""
 print("op3")
-
+#aqui me da un error enfrente del signo de +
 if op3 == "+"
-print("1 + 2 = 3")
+print("num1 + num2 = num1 num2")
