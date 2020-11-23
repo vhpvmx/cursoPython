@@ -17,6 +17,5 @@ try:
 except Exception as e:
     op3 = ""
 print("op3")
-#aqui me da un error enfrente del signo de +
 if op3 == "+"
-print("num1 + num2 = num1 num2")
+#print("num1 + num2 = num1 num2")
